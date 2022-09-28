@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
 import Aboutpage from "./pages/Aboutpage";
@@ -16,6 +16,8 @@ function App() {
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Homepage/>}/>
                     <Route path="about" element={<Aboutpage/>}/>
+                    {/*Переадресация через Navigate*/}
+                    <Route path="about-us" element={<Navigate to='/about' replace/>}/>
                     <Route path="blog" element={<Blogpage/>}/>
                     <Route path="blog/:id" element={<SinglePage/>}/>
                     <Route path="blog/:id/edit" element={<EditPost/>}/>
