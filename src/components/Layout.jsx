@@ -1,14 +1,13 @@
-import {NavLink, Outlet} from "react-router-dom";
-
-const setActive = ({isActive}) => isActive ? 'active-link' : '';
+import {Outlet} from "react-router-dom";
+import CustomLink from "./CustomLink";
 
 const Layout = () => {
     return (
         <>
             <header>
-                <NavLink className={setActive} to="/">Home</NavLink>
-                <NavLink style={({isActive}) => ({color: isActive ? 'blue' : 'white'})} to="/blog">Blog</NavLink>
-                <NavLink className={setActive} to="/about">About</NavLink>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="/blog">Blog</CustomLink>
+                <CustomLink to="/about">About</CustomLink>
             </header>
             <main className='container'>
                 <Outlet/>
