@@ -8,10 +8,14 @@ import Layout from "./components/Layout";
 import SinglePage from "./pages/SinglePage";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
+import LoginPage from "./pages/LoginPage";
+import RequireAuth from "./hoc/RequireAuth";
+import {AuthProvider} from "./hoc/AuthProvider";
+
 
 function App() {
     return (
-        <>
+        <AuthProvider>
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Homepage/>}/>
@@ -21,11 +25,16 @@ function App() {
                     <Route path="blog" element={<Blogpage/>}/>
                     <Route path="blog/:id" element={<SinglePage/>}/>
                     <Route path="blog/:id/edit" element={<EditPost/>}/>
-                    <Route path="blog/new" element={<CreatePost/>}/>
+                    <Route path="blog/new" element={
+                        <RequireAuth>
+                            <CreatePost/>
+                        </RequireAuth>
+                    }/>
+                    <Route path="login" element={<LoginPage/>}/>
                     <Route path="*" element={<Notfoundpage/>}/>
                 </Route>
             </Routes>
-        </>
+        </AuthProvider>
     );
 }
 
