@@ -5,9 +5,9 @@ const Layout = () => {
     return (
         <>
             <header>
-                <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/blog">Blog</CustomLink>
-                <CustomLink to="/about">About</CustomLink>
+                <CustomLink to="react-router-6">Home</CustomLink>
+                <CustomLink to="react-router-6/blog">Blog</CustomLink>
+                <CustomLink to="react-router-6/about">About</CustomLink>
             </header>
             <main className='container'>
                 <Outlet/>
