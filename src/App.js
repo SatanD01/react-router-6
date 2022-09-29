@@ -17,7 +17,7 @@ function App() {
     return (
         <AuthProvider>
             <Routes>
-                <Route path="react-router-6" element={<Layout/>}>
+                <Route path="/" element={<Layout/>}>
                     <Route index element={<Homepage/>}/>
                     <Route path="react-router-6/about" element={<Aboutpage/>}>
                         <Route path="react-router-6/contacts" element={<p>Our Contacts</p>}/>
