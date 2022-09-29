@@ -17,24 +17,24 @@ function App() {
     return (
         <AuthProvider>
             <Routes>
-                <Route path="/" element={<Layout/>}>
+                <Route path="/react-router-6" element={<Layout/>}>
                     <Route index element={<Homepage/>}/>
-                    <Route path="about" element={<Aboutpage/>}>
-                        <Route path="contacts" element={<p>Our Contacts</p>}/>
-                        <Route path="team" element={<p>Our Team</p>}/>
+                    <Route path="react-router-6/about" element={<Aboutpage/>}>
+                        <Route path="react-router-6/contacts" element={<p>Our Contacts</p>}/>
+                        <Route path="react-router-6/team" element={<p>Our Team</p>}/>
                     </Route>
                     {/*Переадресация через Navigate*/}
-                    <Route path="about-us" element={<Navigate to='/about' replace/>}/>
-                    <Route path="blog" element={<Blogpage/>}/>
-                    <Route path="blog/:id" element={<SinglePage/>}/>
-                    <Route path="blog/:id/edit" element={<EditPost/>}/>
-                    <Route path="blog/new" element={
+                    <Route path="react-router-6/about-us" element={<Navigate to='/about' replace/>}/>
+                    <Route path="react-router-6/blog" element={<Blogpage/>}/>
+                    <Route path="react-router-6/blog/:id" element={<SinglePage/>}/>
+                    <Route path="react-router-6/blog/:id/edit" element={<EditPost/>}/>
+                    <Route path="react-router-6/blog/new" element={
                         <RequireAuth>
                             <CreatePost/>
                         </RequireAuth>
                     }/>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="*" element={<Notfoundpage/>}/>
+                    <Route path="react-router-6/login" element={<LoginPage/>}/>
+                    <Route path="react-router-6/*" element={<Notfoundpage/>}/>
                 </Route>
             </Routes>
         </AuthProvider>
